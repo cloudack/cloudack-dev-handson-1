@@ -32,7 +32,5 @@ public  class WordCountMapper extends
 			word.set(tokenizer.nextToken());
 			context.write(word, one);
 		}
-		FileOutputFormat.getWorkOutputPath(context);
-		sLogger.info("cloudack custom message");
 	}
 }
