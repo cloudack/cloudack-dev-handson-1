@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<buildpath>
+	<buildpathentry external="true" kind="lib" path="/Users/pudi/.m2/repository/org/apache/hadoop/hadoop-core/0.20.2-cdh3u4/hadoop-core-0.20.2-cdh3u4.jar"/>
+</buildpath>
