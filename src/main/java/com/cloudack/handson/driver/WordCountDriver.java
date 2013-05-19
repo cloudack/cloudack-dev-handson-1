@@ -16,6 +16,7 @@ import org.apache.hadoop.mapreduce.lib.output.TextOutputFormat;
 
 import com.cloudack.handson.mapper.WordCountMapper;
 import com.cloudack.handson.reducer.WordCountReducer;
+import com.cloudack.handson.util.WordCountPartitioner;
 
 /**
  * @author pudi
@@ -34,9 +35,13 @@ public class WordCountDriver {
 		job.setOutputValueClass(IntWritable.class);
 		
 		job.setMapperClass(WordCountMapper.class);
-		job.setReducerClass(WordCountReducer.class);
+		job.setCombinerClass(WordCountReducer.class);
 		
-
+		job.setReducerClass(WordCountReducer.class);
+        job.setPartitionerClass(WordCountPartitioner.class);
+        
+        job.setNumReduceTasks(20);
+		
 		job.setInputFormatClass(TextInputFormat.class);
 		job.setOutputFormatClass(TextOutputFormat.class);
 
